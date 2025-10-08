@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Carte de mes hôtels</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map { height: 100vh; width: 100%; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    // Création de la carte, centrée sur l'Italie
+    var map = L.map('map').setView([44.5, 11.5], 6);
+
+    // Fond de carte OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Hôtels
+
+    // Hôtel à Mules (Vipiteno)
+    var hotel1 = L.circleMarker([46.85109, 11.52056], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel1.bindPopup(
+      "<b>Romantik Hotel Stafler - Mules (Vipiteno)</b><br>" +
+      "Date : 10/07/25<br>" +
+      "Durée : 1 nuit<br>" +
+      "<a href='https://www.stafler.com/it/romantik-hotel.html' target='_blank'>Voir l'hôtel</a>"
+    );
+
+    // Hôtel à Bologne
+    var hotel2 = L.circleMarker([44.4886, 11.3401], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel2.bindPopup(
+      "<b>Luxe Historic Studio - Bologne</b><br>" +
+      "Date : 11/07/25<br>" +
+      "Durée : 2 nuits<br>" +
+      "<a href='https://luxe-historic-studio-city-centre.bolognahotel24.com/' target='_blank'>Voir le BnB</a>"
+    );
+
+ // Hôtel à Ripatransone
+    var hotel3 = L.circleMarker([43.01641, 13.80555], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel3.bindPopup(
+      "<b>Pietra Antica Agriturismo - Ripatransone</b><br>" +
+      "Date : 13/07/25<br>" +
+      "Durée : 3 nuits<br>" +
+      "<a href='https://www.agriturismopietrantica.com/le-camere/' target='_blank'>Voir l'Agritourisme</a>"
+    );
+
+// Hôtel à Ostuni
+    var hotel4 = L.circleMarker([40.73453, 17.57750], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel4.bindPopup(
+      "<b>Nel Vico Antico - Ostuni</b><br>" +
+      "Date : 16/07/25<br>" +
+      "Durée : 4 nuits<br>" +
+      "<a href='https://www.agoda.com/en-sg/nel-vico-antico/hotel/ostuni-it.html?cid=1844104&ds=lfBT3j81rDW%2BT0x9' target='_blank'>Voir le BnB</a>"
+    );
+
+// Hôtel à Petacciato
+    var hotel5 = L.circleMarker([42.02223, 14.86439], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel5.bindPopup(
+      "<b>Colle Gegli Ulivi - Petacciato</b><br>" +
+      "Date : 20/07/25<br>" +
+      "Durée : 4 nuits<br>" +
+      "<a href='https://agricolledegliulivi.com/' target='_blank'>Voir l'Agritourisme</a>"
+    );
+
+// Hôtel à Cesenatico
+    var hotel6 = L.circleMarker([44.19969, 12.36726], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel6.bindPopup(
+      "<b>Locanda Antico Casale - Cesenatico</b><br>" +
+      "Date : 24/07/25<br>" +
+      "Durée : 1 nuit<br>" +
+      "<a href='https://www.anticocasalecesenatico.com/bed-and-breakfast-cesenatico' target='_blank'>Voir le BnB</a>"
+    );
+
+// Hôtel à Trento
+    var hotel7 = L.circleMarker([46.07099, 11.12157], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel7.bindPopup(
+      "<b>Grand Hôtel - Trento</b><br>" +
+      "Date : 25/07/25<br>" +
+      "Durée : 1 nuit<br>" +
+      "<a href='https://www.grandhoteltrento.com/' target='_blank'>Voir l'hôtel</a>"
+    );
+
+// Hôtel à Porto
+    var hotel8 = L.circleMarker([41.14482, -8.59789], {
+      radius: 6,       // taille du cercle
+      color: "red",   // contour
+      fillColor: "yellow",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel8.bindPopup(
+      "<b>Dukes Corner Guest House  - Porto</b><br>" +
+      "Date : 05/05/25<br>" +
+      "Durée : 4 nuits<br>" +
+      "<a href='https://www.dukescornerguesthouse.com/fr/index.html' target='_blank'>Voir la chambre d'hôte</a>"
+    );
+
+// Hôtel à Costa Nova
+    var hotel9 = L.circleMarker([40.61150, -8.75012], {
+      radius: 6,       // taille du cercle
+      color: "red",   // contour
+      fillColor: "yellow",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel9.bindPopup(
+      "<b>Hôtel Costa Nova - Costa Nova</b><br>" +
+      "Date : 03/05/25<br>" +
+      "Durée : 2 nuits<br>" +
+      "<a href='https://www.costanovahotel.com/' target='_blank'>Voir l'hôtel</a>"
+    );
+
+// Hôtel à Paris
+    var hotel10 = L.circleMarker([48.87893, 2.33681], {
+      radius: 6,       // taille du cercle
+      color: "blue",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel10.bindPopup(
+      "<b>Hôtel Lorette - Paris</b><br>" +
+      "Date : 31/01/25<br>" +
+      "Durée : 2 nuits<br>" +
+      "<a href='https://www.astotel.com/hotel/lorette-opera/overview' target='_blank'>Voir l'hôtel</a>"
+    );
+
+// Hôtel à Lille
+    var hotel11 = L.circleMarker([50.63876, 3.07219], {
+      radius: 6,       // taille du cercle
+      color: "blue",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel11.bindPopup(
+      "<b>Hôtel Mama Shelter - Lille</b><br>" +
+      "Date : 14/12/24<br>" +
+      "Durée : 1 nuit<br>" +
+      "<a href='https://fr.mamashelter.com/lille/?gad_source=1&gad_campaignid=22837415221&gclid=Cj0KCQjw8KrFBhDUARIsAMvIApa_LZUIvWhVB_Ex5FiwAfVo1egkjEtZjuP-HpWJxCXR5by9c2UuauEaAtypEALw_wcB' target='_blank'>Voir l'hôtel</a>"
+    );
+
+// Hôtel à Gueberschwihr
+    var hotel12 = L.circleMarker([48.00372, 7.26023], {
+      radius: 6,       // taille du cercle
+      color: "blue",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel12.bindPopup(
+      "<b>Roulottes Django et Bella - Gueberschwihr</b><br>" +
+      "Date : 21/07/24<br>" +
+      "Durée : 1 nuit<br>" +
+      "<a href='https://roulottes-django-et-bella.alsacehotelsweb.com/fr/' target='_blank'>Voir les roulottes</a>"
+    );
+
+// Hôtel à Côme
+    var hotel13 = L.circleMarker([45.78913, 9.16216], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel13.bindPopup(
+      "<b>Casale Raffaello B&B - Côme</b><br>" +
+      "Date : 20/07/24<br>" +
+      "Durée : 1 nuit<br>" +
+      "<a href='https://www.casaleraffaello.it/' target='_blank'>Voir le BnB</a>"
+    );
+
+// Hôtel à Termoli
+    var hotel14 = L.circleMarker([42.00489, 14.99666], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel14.bindPopup(
+      "<b>Residence Sveva - Termoli</b><br>" +
+      "Date : 16/07/24<br>" +
+      "Durée : 4 nuits<br>" +
+      "<a href='https://www.residenzasveva.com/home'_blank'>Voir le BnB</a>"
+    );
+
+// Hôtel à Vieste
+    var hotel15 = L.circleMarker([41.88262, 16.17881], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel15.bindPopup(
+      "<b>Rais BnB - Vieste</b><br>" +
+      "Date : 12/07/24<br>" +
+      "Durée : 4 nuits<br>" +
+      "<a href='https://www.raisvieste.it/'_blank'>Voir le BnB</a>"
+    );
+
+// Hôtel à Ortezzanno
+    var hotel16 = L.circleMarker([43.02635, 13.59807], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel16.bindPopup(
+      "<b>Casa Degli Gnomi - Ortezzanno</b><br>" +
+      "Date : 08/07/24<br>" +
+      "Durée : 4 nuits<br>" +
+      "<a href='https://lacasadeglignomi.net/'>Voir l'Agritourisme</a>"
+    );
+
+// Hôtel à Vipiteno
+    var hotel17 = L.circleMarker([46.87596, 11.48602], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel17.bindPopup(
+      "<b>Hôtel Gasthaus Post - Campo di Trens</b><br>" +
+      "Date : 07/07/24<br>" +
+      "Durée : 1 nuit<br>" +
+      "<a href='https://www.post-trens.it/en/hotel/'>Voir l'hôtel</a>"
+    );
+
+// Hôtel à Sant'Agata
+    var hotel18 = L.circleMarker([40.60601, 14.36330], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel18.bindPopup(
+      "<b>De Maria House - Sant'Agata sui Due Golfi</b><br>" +
+      "Date : 08/05/24<br>" +
+      "Durée : 3 nuits<br>" +
+      "<a href='https://fr.tripadvisor.be/Hotel_Review-g194819-d1783906-Reviews-De_Maria_House_B_b-Massa_Lubrense_Province_of_Naples_Campania.html'>Voir l'hôtel</a>"
+    );
+
+// Hôtel à Maiori
+    var hotel19 = L.circleMarker([40.64918, 14.63943], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel19.bindPopup(
+      "<b>Hôtel Pensione Reale - Maiori</b><br>" +
+      "Date : 08/05/24<br>" +
+      "Durée : 3 nuits<br>" +
+      "<a href='https://www.tripadvisor.fr/Hotel_Review-g194806-d1535102-Reviews-Hotel_Pensione_Reale-Maiori_Amalfi_Coast_Province_of_Salerno_Campania.html'>Voir l'hôtel</a>"
+    );
+
+// Hôtel à Wingen-sur-Moder
+    var hotel20 = L.circleMarker([48.91845, 7.38068], {
+      radius: 6,       // taille du cercle
+      color: "blue",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel20.bindPopup(
+      "<b>Au Wingenerhof - Wingen-sur-Moder</b><br>" +
+      "Date : 06/04/24<br>" +
+      "Durée : 1 nuit<br>" +
+      "<a href='https://www.hotel-restaurant-auwingenerhof.fr/'>Voir l'hôtel</a>"
+    );
+
+// Hôtel à Nancy
+    var hotel21 = L.circleMarker([48.66888, 6.14443], {
+      radius: 6,       // taille du cercle
+      color: "blue",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel21.bindPopup(
+      "<b>Le Clos Jeannon - Nancy</b><br>" +
+      "Date : 03/11/21 et 02/02/24<br>" +
+      "Durée : 2 x 2 nuits<br>" +
+      "<a href='https://www.leclosjeannon.eu/fr/'>Voir le BnB</a>"
+    );
+
+// Hôtel à Talloires
+    var hotel22 = L.circleMarker([45.83924, 6.21421], {
+      radius: 6,       // taille du cercle
+      color: "blue",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel22.bindPopup(
+      "<b>Hôtel du Lac - Talloires</b><br>" +
+      "Date : 27/07/23<br>" +
+      "Durée : 1 nuit<br>" +
+      "<a href='https://www.hotel-du-lac.com/'>Voir l'hôtel</a>"
+    );
+
+// Hôtel à Sori
+    var hotel23 = L.circleMarker([44.38160, 9.11057], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel23.bindPopup(
+      "<b>A casa di Mila - Sori</b><br>" +
+      "Date : 26/07/23<br>" +
+      "Durée : 1 nuit<br>" +
+      "<a href='https://www.acasadimila.it/it/'>Voir le BnB</a>"
+    );
+
+// Hôtel à Porto Ercole
+    var hotel24 = L.circleMarker([42.39309, 11.20218], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel24.bindPopup(
+      "<b>0.8 Guest House - Porto Ercole</b><br>" +
+      "Date : 22/07/23<br>" +
+      "Durée : 4 nuits<br>" +
+      "<a href='https://www.tripadvisor.nl/Hotel_Review-g194857-d26859075-Reviews-0_8_Guest_House-Porto_Ercole_Monte_Argentario_Province_of_Grosseto_Tuscany.html'>Voir le BnB</a>"
+    );
+
+// Hôtel à Cavo
+    var hotel25 = L.circleMarker([42.86000, 10.41953], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel25.bindPopup(
+      "<b>Hôtel Marelba - Cavo</b><br>" +
+      "Date : 17/07/23<br>" +
+      "Durée : 5 nuits<br>" +
+      "<a href='https://www.hotelmarelba.it/ristorante/'>Voir l'hôtel</a>"
+    );
+
+// Hôtel à Montecatini
+    var hotel26 = L.circleMarker([43.89176, 10.77667], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel26.bindPopup(
+      "<b>Grand Hôtel Panoramic - Montecatini Terme</b><br>" +
+      "Date : 14/07/23<br>" +
+      "Durée : 3 nuits<br>" +
+      "<a href='https://www.grandhotelpanoramic.it/'>Voir l'hôtel</a>"
+    );
+
+// Hôtel à Torre di Palme
+    var hotel27 = L.circleMarker([43.14201, 13.81189], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel27.bindPopup(
+      "<b>La casa de Torre di Palme - Torre di Palme</b><br>" +
+      "Date : 10/07/23<br>" +
+      "Durée : 4 nuits<br>" +
+      "<a href='https://www.lacasaditorredipalme.it/'>Voir le BnB</a>"
+    );
+
+// Hôtel à Vipiteno
+    var hotel28 = L.circleMarker([46.87214, 11.48297], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel28.bindPopup(
+      "<b>Hôtel Lener - Vipiteno</b><br>" +
+      "Date : 09/07/23<br>" +
+      "Durée : 1 nuit<br>" +
+      "<a href='https://www.lener.it/it.html'>Voir le BnB</a>"
+    );
+
+// Hôtel à Francorchamps
+    var hotel29 = L.circleMarker([50.43473, 5.89815], {
+      radius: 6,       // taille du cercle
+      color: "yellow",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel29.bindPopup(
+      "<b>Le clos du cerf - Francorchamps</b><br>" +
+      "Date : 22/02/23<br>" +
+      "Durée : 1 nuit<br>" +
+      "<a href='https://leclosducerf.com/'>Voir le BnB</a>"
+    );
+
+// Hôtel à Charneux
+    var hotel30 = L.circleMarker([50.67725, 5.83211], {
+      radius: 6,       // taille du cercle
+      color: "yellow",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel30.bindPopup(
+      "<b>Aux pieds des vaches - Charneux</b><br>" +
+      "Date : 21/02/23<br>" +
+      "Durée : 1 nuit<br>" +
+      "<a href='https://www.chambres-hotes.fr/chambres-hotes_aux-pieds-des-vaches_charneux_h3501717.htm'>Voir le BnB</a>"
+    );
+
+// Hôtel à Rouy-le-Petit
+    var hotel31 = L.circleMarker([49.77152, 2.94750], {
+      radius: 6,       // taille du cercle
+      color: "blue",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel31.bindPopup(
+      "<b>L'escale aux framboises - Rouy-le-Petit</b><br>" +
+      "Date : 03/02/23<br>" +
+      "Durée : 1 nuit<br>" +
+      "<a href='https://www.escaleauxframboises.fr/'>Voir le BnB</a>"
+    );
+
+// Hôtel à Vipiteno
+    var hotel32 = L.circleMarker([46.89273, 11.41921], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel32.bindPopup(
+      "<b>Hotel Thuinerwaldele - Vipiteno</b><br>" +
+      "Date : 21/07/22<br>" +
+      "Durée : 1 nuit<br>" +
+      "<a href='https://www.thuinerwaldele.it/de.html'>Voir l'hôtel</a>"
+    );
+
+// Hôtel à Fermo
+    var hotel33 = L.circleMarker([43.15972, 13.72114], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel33.bindPopup(
+      "<b>Appartamento a Palazzo Vinci - Fermo</b><br>" +
+      "Date : 17/07/22<br>" +
+      "Durée : 4 nuits<br>" +
+      "<a href='https://www.lacasadicarla.it/palazzo-vinci/'>Voir la chambre d'hôte</a>"
+    );
+
+// Hôtel à Ostuni
+    var hotel34 = L.circleMarker([40.71594, 17.55832], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel34.bindPopup(
+      "<b>Piccolo Hôtel Villa Rosa - Ostuni</b><br>" +
+      "Date : 13/07/22<br>" +
+      "Durée : 4 nuits<br>" +
+      "<a href='https://www.piccolohotelvillarosa.com/'>Voir l'hôtel</a>"
+    );
+
+// Hôtel à Otranto
+    var hotel35 = L.circleMarker([40.14482, 18.48990], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel35.bindPopup(
+      "<b>Cala Dei Normanni - Otranto</b><br>" +
+      "Date : 09/07/22<br>" +
+      "Durée : 4 nuits<br>" +
+      "<a href='https://www.caladeinormanni.com/room/camere-sulle-mura/'>Voir le BnB</a>"
+    );
+
+// Hôtel à Monterado
+    var hotel36 = L.circleMarker([43.69817, 13.09144], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel36.bindPopup(
+      "<b>Castello di Monterado - Monterado</b><br>" +
+      "Date : 05/07/22<br>" +
+      "Durée : 4 nuits<br>" +
+      "<a href='https://www.castellodimonterado.it/'>Voir l'hôtel</a>"
+    );
+
+// Hôtel à Brescia
+    var hotel37 = L.circleMarker([45.53465, 10.22930], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel37.bindPopup(
+      "<b>Centro Paolo VI - Brescia</b><br>" +
+      "Date : 04/07/22<br>" +
+      "Durée : 1 nuit<br>" +
+      "<a href='https://www.paolovi.it/en'>Voir l'hôtel</a>"
+    );
+
+// Hôtel à Mulhouse
+    var hotel38 = L.circleMarker([47.62220, 7.27173], {
+      radius: 6,       // taille du cercle
+      color: "blue",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel38.bindPopup(
+      "<b>Hôtel Restaurant Kuentz - Mulhouse</b><br>" +
+      "Date : 03/07/22<br>" +
+      "Durée : 1 nuit<br>" +
+      "<a href='https://www.facebook.com/kuentz.hotel/'>Voir l'hôtel</a>"
+    );
+
+// Hôtel à Boulogne-sur-Mer
+    var hotel39 = L.circleMarker([50.73516, 1.70373], {
+      radius: 6,       // taille du cercle
+      color: "blue",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel39.bindPopup(
+      "<b>De la maison aux ateliers - Boulogne-sur-Mer</b><br>" +
+      "Date : 12/02/22<br>" +
+      "Durée : 1 nuit<br>" +
+      "<a href='https://www.facebook.com/delamaisonauxateliers/?locale=fr_FR'>Voir le BnB</a>"
+    );
+
+// Hôtel à Thionville
+    var hotel40 = L.circleMarker([49.35781, 6.16583], {
+      radius: 6,       // taille du cercle
+      color: "blue",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel40.bindPopup(
+      "<b>Logis-Hôtel des Oliviers - Thionville</b><br>" +
+      "Date : 05/11/21<br>" +
+      "Durée : 2 nuits<br>" +
+      "<a href='https://www.hoteldesoliviers.com/'>Voir l'hôtel</a>"
+    );
+
+// Hôtel à Catane
+    var hotel41 = L.circleMarker([37.50315, 15.09276], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel41.bindPopup(
+      "<b>B&B Sciara Larmisi - Catane</b><br>" +
+      "Date : 14/07/21<br>" +
+      "Durée : 3 nuits<br>" +
+      "<a href='https://www.tripadvisor.it/Hotel_Review-g187888-d11756944-Reviews-B_B_Sciara_Larmisi-Catania_Province_of_Catania_Sicily.html'>Voir le BnB</a>"
+    );
+
+// Hôtel à San Leone
+    var hotel42 = L.circleMarker([37.25042, 13.60926], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel42.bindPopup(
+      "<b>Terrazze Naos - San Leone</b><br>" +
+      "Date : 10/07/21<br>" +
+      "Durée : 4 nuits<br>" +
+      "<a href='https://www.terrazzenaos.com/?utm_source=gbp&utm_medium=organic'>Voir le BnB</a>"
+    );
+
+// Hôtel à Syracuse
+    var hotel43 = L.circleMarker([37.01273, 15.26326], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel43.bindPopup(
+      "<b>Addauro Resort - Syracuse</b><br>" +
+      "Date : 07/07/21<br>" +
+      "Durée : 3 nuits<br>" +
+      "<a href='https://www.addauro.com/'>Voir le BnB</a>"
+    );
+
+// Hôtel à Letojanni
+    var hotel44 = L.circleMarker([37.87800, 15.30504], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel44.bindPopup(
+      "<b>Maniel Beach Hôtel - Letojanni</b><br>" +
+      "Date : 03/07/21<br>" +
+      "Durée : 4 nuits<br>" +
+      "<a href='https://www.manielbeachotel.it/'>Voir l'hôtel</a>"
+    );
+
+
+// Hôtel à Marche-en-Famenne
+    var hotel45 = L.circleMarker([50.21929, 5.34899], {
+      radius: 6,       // taille du cercle
+      color: "yellow",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel45.bindPopup(
+      "<b>La Gloriette - Marche-en-Famenne</b><br>" +
+      "Date : 06/04/21<br>" +
+      "Durée : 1 nuit<br>" +
+      "<a href='https://lagloriette.net/lhotel-2/'>Voir le BnB</a>"
+    );
+
+// Hôtel à Paris
+    var hotel46 = L.circleMarker([48.87804, 2.34759], {
+      radius: 6,       // taille du cercle
+      color: "blue",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel46.bindPopup(
+      "<b>Relais du Pré - Paris</b><br>" +
+      "Date : 02/11/22<br>" +
+      "Durée : 4 nuits<br>" +
+      "<a href='https://www.leshotelsdupre.com/fr/nos-hotels/relais-du-pre/hotel-et-services'>Voir l'hôtel</a>"
+    );
+
+// Hôtel à Breda
+    var hotel47 = L.circleMarker([51.58313, 4.77763], {
+      radius: 6,       // taille du cercle
+      color: "orange",   // contour
+      fillColor: "orange",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel47.bindPopup(
+      "<b>Boutique Van Ham Hôtel - Breda</b><br>" +
+      "Date : 23/10/21<br>" +
+      "Durée : 1 nuit<br>" +
+      "<a href='https://www.boutiquevanham.nl/'>Voir l'hôtel</a>"
+    );
+
+// BnB à Thionville
+    var hotel47 = L.circleMarker([49.33159, 6.06457], {
+      radius: 6,       // taille du cercle
+      color: "blue",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel47.bindPopup(
+      "<b>Villa Mila - Hayange</b><br>" +
+      "Date : 04/10/25<br>" +
+      "Durée : 1 nuit<br>" +
+      "<a href='https://fr.airbnb.be/rooms/1373287433951795174?source_impression_id=p3_1759181544_P3sq1sUPb7xrKpOO'>Voir le BnB</a>"
+    );
+
+
+
+ 
+
+  </script>
+</body>
+</html>
