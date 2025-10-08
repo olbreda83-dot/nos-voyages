@@ -639,7 +639,7 @@
     );
 
 
-// Hôtel à Marche-en-Famenne
+// BnB à Marche-en-Famenne
     var hotel45 = L.circleMarker([50.21929, 5.34899], {
       radius: 6,       // taille du cercle
       color: "yellow",   // contour
@@ -681,18 +681,32 @@
       "<a href='https://www.boutiquevanham.nl/'>Voir l'hôtel</a>"
     );
 
-// BnB à Thionville
-    var hotel47 = L.circleMarker([49.33159, 6.06457], {
+// Chambre d'hôte à Thionville
+    var hotel48 = L.circleMarker([49.33159, 6.06457], {
       radius: 6,       // taille du cercle
       color: "blue",   // contour
       fillColor: "red",
       fillOpacity: 0.8
     }).addTo(map); // Coordonnées GPS approximatives
-    hotel47.bindPopup(
+    hotel48.bindPopup(
       "<b>Villa Mila - Hayange</b><br>" +
       "Date : 04/10/25<br>" +
       "Durée : 1 nuit<br>" +
-      "<a href='https://fr.airbnb.be/rooms/1373287433951795174?source_impression_id=p3_1759181544_P3sq1sUPb7xrKpOO'>Voir le BnB</a>"
+      "<a href='https://fr.airbnb.be/rooms/1373287433951795174?source_impression_id=p3_1759181544_P3sq1sUPb7xrKpOO'>Voir la chambre d'hôte</a>"
+    );
+
+// Chambre d'hôte à Isles-Sur-Suippe (Reims)
+    var hotel49 = L.circleMarker([49.35765, 4.19680], {
+      radius: 6,       // taille du cercle
+      color: "blue",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel49.bindPopup(
+      "<b>Pavillon C.R - Isles-Sur-Suippe</b><br>" +
+      "Date : 31/10/25<br>" +
+      "Durée : 1 nuit<br>" +
+      "<a href='https://www.booking.com/Share-GHStHr'>Voir le Bnb</a>"
     );
 
 
