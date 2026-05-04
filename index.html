@@ -723,7 +723,19 @@
       "<a href='https://le-manoir-du-soldat.fr/fr/'>Voir l'hôtel</a>"
     );
  
-
+// Hôtel à Varese
+    var hotel51 = L.circleMarker([45.81866, 8.83054], {
+      radius: 6,       // taille du cercle
+      color: "green",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel51.bindPopup(
+      "<b>Hôtel di Varese - Varese</b><br>" +
+      "Date : 26/04/26<br>" +
+      "Durée : 1 nuit<br>" +
+      "<a href='https://www.hoteldivarese.com/'</a>"
+    );
     
   </script>
 </body>
