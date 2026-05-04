@@ -709,7 +709,19 @@
       "<a href='https://aubergedelabbaye-signy.fr/'>Voir l'hôtel</a>"
     );
 
-
+// Hôtel à Phalsbourg
+    var hotel50 = L.circleMarker([48.76694, 7.26217], {
+      radius: 6,       // taille du cercle
+      color: "blue",   // contour
+      fillColor: "red",
+      fillOpacity: 0.8
+    }).addTo(map); // Coordonnées GPS approximatives
+    hotel50.bindPopup(
+      "<b>Le Manoir du Soldat - Phalsbourg</b><br>" +
+      "Date : 25/05/26<br>" +
+      "Durée : 1 nuit<br>" +
+      "<a href='https://le-manoir-du-soldat.fr/fr/'>Voir l'hôtel</a>"
+    );
  
 
   </script>
