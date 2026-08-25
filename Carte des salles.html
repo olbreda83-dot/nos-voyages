@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Carte des salles de spectacles - Wallonie</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<style>
+  html, body { height: 100%; margin: 0; padding: 0; }
+  #map { height: 100%; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+// Carte centrée sur la Wallonie
+var map = L.map('map').setView([50.5, 4.5], 8);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+// Liste compacte des salles : [nom, lat, lon, lien agenda]
+var salles=[
+["Centre culturel de Welkenraedt",50.664569, 5.970138,"https://www.ccwelkenraedt.be/evenements/"],
+["La Scène (Intermills), Malmedy",50.432434, 6.028912,"https://www.lascenemalmedy.be/evenement/"],
+["Espace Duesberg, Verviers",50.59299,5.84752,"https://www.ccverviers.be/"],
+["Centre culturel de Theux",50.53872, 5.88199,"https://centrecultureltheux.wixsite.com/cctheux/musique "],
+["Centre culturel de Stavelot–Trois-Ponts",50.393018, 5.931649,"https://www.ccstp.be/agenda/"],
+["SPOTT – Centre culturel d’Ottignies-Louvain-la-Neuve",50.675,4.607,"https://spott.be"],
+["Centre culturel de Dison",50.608432, 5.854876,"https://www.ccdison.be/site/index.php/agenda/concert"],
+["La Sucrerie Wavre",50.714925, 4.602954,"https://lasucreriewavre.be/agenda"],
+["Spirit of 66",50.59368,5.86101,"https://www.spiritof66.be/agenda.php"],
+["Le Forum Liège",50.640981, 5.570211,"https://www.leforum.be/agenda.html"],
+["Ancienne Belgique",50.847329, 4.349640,"https://www.abconcerts.be/fr/agenda/"], 
+["Forest National",50.8101718279288, 4.325988902845989,"https://www.forest-national.be/calendrier?venue=VN"],
+["Botanique",50.8540,4.3663,"https://botanique.be/fr/agenda"],
+["Centre Culturel de Spa",50.491439, 5.865796,"https://ccspa-jalhay-stoumont.be/agenda-du-cc/"],
+["Le Dôme",50.423930, 4.445674,"https://www.dome-events.be/"],
+["Stade du Freethiel Beveren",51.214325, 4.243781,"https://www.skbeveren.be/"],
+["Théâtre Le Poche",50.417336, 4.443533,"https://www.lepoche.be/"],
+["Le 140",50.852132, 4.396233,"https://www.le140.be/saison/"],
+["Théâtre National Wallonie-Bruxelles",50.854952, 4.354895,"https://www.theatrenational.be/fr/program/"],
+["Cirque Royal",50.849225, 4.365677,"https://cirqueroyalbruxelles.be/fr/agenda"],
+["La Madeleine",50.84493,4.35460,"https://www.la-madeleine.be/agenda"],
+["L'entrepôt Arlon",49.680934, 5.805990,"https://www.entrepotarlon.be/index.php"],
+["Le Trocadero Liège",50.64237, 5.57196,"https://shop.utick.net/?module=CATALOGUE&pos=TROCADERO"],
+["Palais des Beaux-Arts",50.413755, 4.443706,"https://www.pba.be/agenda/"]];
+
+salles.forEach(function(s){
+  L.marker([s[1],s[2]]).addTo(map)
+   .bindPopup('<b>'+s[0]+'</b><br><a href="'+s[3]+'" target="_blank">Voir l\'agenda</a>');
+});
+</script>
+</body>
+</html>
